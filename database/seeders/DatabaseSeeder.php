@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
+//uso this kind
 class DatabaseSeeder extends Seeder
 {
     /**
