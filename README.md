@@ -1,22 +1,3 @@
-<p align="center">
-  <a href="https://laravel.com" target="_blank">
-    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
-  </a>
-</p>
-
-# Panel de Administración con Laravel y Flowbite
-
-Este proyecto establece una plantilla base para un panel de administración en *Laravel*, haciendo uso de componentes **Blade** y la librería de UI *Flowbite* sobre Tailwind CSS. La meta es construir una estructura de layout modular y reutilizable para las vistas protegidas de la aplicación.
-
----
-
-## Pasos de Implementación 🚀
-
-### 1. Creación del Layout (admin.blade.php)
-
-Para generar la plantilla base para las vistas del panel de administración, se siguieron estos pasos:
-
-- **Generación del Componente**: Se utilizó Artisan para crear un nuevo componente Blade llamado AdminLayout con este comando:
-
-```bash
-php artisan make:component AdminLayout
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Panel Administrativo con Laravel y Flowbite
+Este proyecto establece una plantilla inicial para un panel de administración en Laravel, empleando componentes Blade y la librería de UI Flowbite sobre Tailwind CSS. La finalidad es crear un layout modular y reutilizable para las vistas protegidas de la aplicación. Para implementar esta plantilla, se generó un componente Blade llamado AdminLayout con el comando php artisan make:component AdminLayout, luego se trasladó el archivo admin-layout.blade.php desde resources/views/components/ a resources/views/layouts/ y se renombró a admin.blade.php. La clase del componente en app/View/Components/AdminLayout.php se actualizó para que el método render() apunte a view('layouts.admin'). Se integró Flowbite como dependencia de NPM mediante npm install flowbite --save, y se incorporó el HTML del navbar y del sidebar directamente en el layout admin.blade.php mediante @include('layouts.includes.admin.navigation') y @include('layouts.includes.admin.sidebar'). La vista del dashboard en resources/views/admin/dashboard.blade.php se envolvió con <x-admin-layout>Hola desde Admin</x-admin-layout> para heredar el layout, y el contenido se inyecta dinámicamente usando {{ $slot }}. Asimismo, la vista del perfil de usuario en resources/views/profile/show.blade.php se adaptó para utilizar <x-admin-layout> en lugar de <x-app-layout>, garantizando uniformidad en toda la interfaz del panel administrativo.
